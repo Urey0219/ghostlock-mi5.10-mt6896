@@ -74,4 +74,6 @@ Do not run it on hardware you do not control.
 
 ## License
 
-GNU General Public License v3.0 — see [LICENSE](LICENSE).
+Copyright (C) 2026 Urey0219
+
+This project is licensed under the GNU General Public License v3.0 — see [LICENSE](LICENSE).
