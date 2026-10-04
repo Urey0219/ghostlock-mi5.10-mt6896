@@ -19,7 +19,6 @@ On any other build the PoC will not work and may crash the device.
 
 ```
 src/    sources and build scripts
-bin/    prebuilt binaries (see below)
 ```
 
 ## Build
@@ -42,23 +41,28 @@ and returns the same status as the executable's exit code.
 ## Usage
 
 ```sh
-adb push bin/ghostlock /data/local/tmp/
+adb push ghostlock /data/local/tmp/
 adb shell chmod 755 /data/local/tmp/ghostlock
 adb shell /data/local/tmp/ghostlock
 ```
 
+`ghostlock` is either the binary from the [releases](../../releases) page, or
+`src/build-ndk/ghostlock` after building from source.
+
 No arguments. No configuration. No output on success; exit code `0` means the
 escalation succeeded and root was handed to KernelSU (`ksud late-load`).
 
-## Prebuilt binaries
+## Releases
+
+Prebuilt binaries are attached to the [releases](../../releases) page:
 
 | File | md5 | Size |
 |---|---|---|
-| `bin/ghostlock` | `341cbc0d212773afde19f3d85b649ab9` | 17880 |
-| `bin/libghostlock.so` | `afed48bbf23a0b288cdc0de2886f0d5e` | 17456 |
+| `ghostlock` | `341cbc0d212773afde19f3d85b649ab9` | 17880 |
+| `libghostlock.so` | `afed48bbf23a0b288cdc0de2886f0d5e` | 17456 |
 
-Both were built with the NDK r27c toolchain from the sources in `src/`.
-They are provided for convenience; rebuilding from source is recommended.
+Both are built with the NDK r27c toolchain from the sources in `src/`.
+Rebuilding from source is recommended.
 
 ## Status
 
